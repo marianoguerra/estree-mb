@@ -1,0 +1,104 @@
+{
+  "type": "Program",
+  "sourceType": "module",
+  "body": [
+    {
+      "type": "ClassDeclaration",
+      "id": { "type": "Identifier", "name": "A" },
+      "superClass": null,
+      "decorators": [
+        { "type": "Decorator", "expression": { "type": "Identifier", "name": "dec" } },
+        {
+          "type": "Decorator",
+          "expression": {
+            "type": "CallExpression",
+            "callee": {
+              "type": "MemberExpression",
+              "object": { "type": "Identifier", "name": "ns" },
+              "property": { "type": "Identifier", "name": "dec" },
+              "computed": false,
+              "optional": false
+            },
+            "arguments": [{ "type": "Literal", "value": 1, "raw": "1" }],
+            "optional": false
+          }
+        }
+      ],
+      "body": {
+        "type": "ClassBody",
+        "body": [
+          {
+            "type": "AccessorProperty",
+            "static": false,
+            "computed": false,
+            "key": { "type": "PrivateIdentifier", "name": "p" },
+            "value": { "type": "Literal", "value": 1, "raw": "1" },
+            "decorators": [
+              { "type": "Decorator", "expression": { "type": "Identifier", "name": "tracked" } }
+            ]
+          },
+          {
+            "type": "AccessorProperty",
+            "static": true,
+            "computed": false,
+            "key": { "type": "Identifier", "name": "s" },
+            "value": null
+          },
+          {
+            "type": "MethodDefinition",
+            "static": false,
+            "computed": false,
+            "key": { "type": "Identifier", "name": "method" },
+            "kind": "method",
+            "value": {
+              "type": "FunctionExpression",
+              "id": null,
+              "expression": false,
+              "generator": false,
+              "async": false,
+              "params": [],
+              "body": { "type": "BlockStatement", "body": [] }
+            },
+            "decorators": [
+              { "type": "Decorator", "expression": { "type": "Identifier", "name": "bound" } }
+            ]
+          },
+          {
+            "type": "PropertyDefinition",
+            "static": true,
+            "computed": true,
+            "key": { "type": "Identifier", "name": "key" },
+            "value": null,
+            "decorators": [
+              { "type": "Decorator", "expression": { "type": "Identifier", "name": "field" } }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "ExportDefaultDeclaration",
+      "declaration": {
+        "type": "ClassDeclaration",
+        "id": null,
+        "superClass": null,
+        "decorators": [
+          { "type": "Decorator", "expression": { "type": "Identifier", "name": "dec" } }
+        ],
+        "body": { "type": "ClassBody", "body": [] }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "ClassExpression",
+        "id": null,
+        "superClass": null,
+        "decorators": [
+          { "type": "Decorator", "expression": { "type": "Identifier", "name": "dec" } }
+        ],
+        "body": { "type": "ClassBody", "body": [] }
+      }
+    }
+  ]
+}

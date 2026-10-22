@@ -1,0 +1,48 @@
+{
+  "type": "Program",
+  "sourceType": "module",
+  "body": [
+    {
+      "type": "ImportDeclaration",
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "local": { "type": "Identifier", "name": "wasm" }
+        }
+      ],
+      "source": { "type": "Literal", "value": "./x.wasm", "raw": "\"./x.wasm\"" },
+      "attributes": [],
+      "phase": "source"
+    },
+    {
+      "type": "ImportDeclaration",
+      "specifiers": [
+        {
+          "type": "ImportNamespaceSpecifier",
+          "local": { "type": "Identifier", "name": "ns" }
+        }
+      ],
+      "source": { "type": "Literal", "value": "./y.js", "raw": "\"./y.js\"" },
+      "attributes": [],
+      "phase": "defer"
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "ImportExpression",
+        "source": { "type": "Literal", "value": "./x.wasm", "raw": "\"./x.wasm\"" },
+        "options": null,
+        "phase": "source"
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "ImportExpression",
+        "source": { "type": "Literal", "value": "./y.js", "raw": "\"./y.js\"" },
+        "options": null,
+        "phase": "defer"
+      }
+    }
+  ]
+}

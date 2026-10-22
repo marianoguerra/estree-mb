@@ -1,0 +1,5 @@
+// import {
+//   "marianoguerra/estree" @lib,
+// }
+
+pkgtype(kind: "executable")

@@ -1,0 +1,912 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "marianoguerra/estree"
+
+import {
+  "moonbitlang/core/debug",
+  "moonbitlang/core/json",
+}
+
+// Values
+
+// Errors
+
+// Types and methods
+pub(all) struct AccessorProperty {
+  info : NodeInfo
+  key : PropertyKey
+  value : Expression?
+  is_static : Bool
+  decorators : Array[Decorator]
+} derive(Eq, @debug.Debug)
+pub impl ToJson for AccessorProperty
+
+pub(all) enum Argument {
+  Expression(Expression)
+  Spread(SpreadElement)
+} derive(Eq, @debug.Debug)
+pub impl ToJson for Argument
+pub impl @json.FromJson for Argument
+
+pub(all) struct ArrayExpression {
+  info : NodeInfo
+  elements : Array[Argument?]
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ArrayExpression
+
+pub(all) struct ArrayPattern {
+  info : NodeInfo
+  elements : Array[Pattern?]
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ArrayPattern
+
+pub(all) enum ArrowBody {
+  Block(FunctionBody)
+  Expression(Expression)
+} derive(Eq, @debug.Debug)
+
+pub(all) struct ArrowFunctionExpression {
+  info : NodeInfo
+  params : Array[Pattern]
+  body : ArrowBody
+  is_async : Bool
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ArrowFunctionExpression
+
+pub(all) struct AssignmentExpression {
+  info : NodeInfo
+  operator : AssignmentOperator
+  left : Pattern
+  right : Expression
+} derive(Eq, @debug.Debug)
+pub impl ToJson for AssignmentExpression
+
+pub(all) enum AssignmentOperator {
+  Assign
+  AddAssign
+  SubAssign
+  MulAssign
+  DivAssign
+  ModAssign
+  ExpAssign
+  ShlAssign
+  ShrAssign
+  UShrAssign
+  BitOrAssign
+  BitXorAssign
+  BitAndAssign
+  OrAssign
+  AndAssign
+  NullishAssign
+} derive(Eq, @debug.Debug)
+pub fn AssignmentOperator::parse(StringView) -> Self?
+pub fn AssignmentOperator::to_string(Self) -> String
+pub impl ToJson for AssignmentOperator
+pub impl @json.FromJson for AssignmentOperator
+
+pub(all) struct AssignmentPattern {
+  info : NodeInfo
+  left : Pattern
+  right : Expression
+} derive(Eq, @debug.Debug)
+pub impl ToJson for AssignmentPattern
+
+pub(all) struct AssignmentProperty {
+  info : NodeInfo
+  key : PropertyKey
+  value : Pattern
+  is_shorthand : Bool
+} derive(Eq, @debug.Debug)
+pub impl ToJson for AssignmentProperty
+
+pub(all) struct AwaitExpression {
+  info : NodeInfo
+  argument : Expression
+} derive(Eq, @debug.Debug)
+pub impl ToJson for AwaitExpression
+
+pub(all) struct BinaryExpression {
+  info : NodeInfo
+  operator : BinaryOperator
+  left : BinaryLeft
+  right : Expression
+} derive(Eq, @debug.Debug)
+pub impl ToJson for BinaryExpression
+
+pub(all) enum BinaryLeft {
+  Expression(Expression)
+  Private(PrivateIdentifier)
+} derive(Eq, @debug.Debug)
+pub impl ToJson for BinaryLeft
+pub impl @json.FromJson for BinaryLeft
+
+pub(all) enum BinaryOperator {
+  Eq
+  NotEq
+  StrictEq
+  StrictNotEq
+  Lt
+  LtEq
+  Gt
+  GtEq
+  Shl
+  Shr
+  UShr
+  Add
+  Sub
+  Mul
+  Div
+  Mod
+  Exp
+  BitOr
+  BitXor
+  BitAnd
+  In
+  Instanceof
+} derive(Eq, @debug.Debug)
+pub fn BinaryOperator::parse(StringView) -> Self?
+pub fn BinaryOperator::to_string(Self) -> String
+pub impl ToJson for BinaryOperator
+pub impl @json.FromJson for BinaryOperator
+
+pub(all) struct BlockStatement {
+  info : NodeInfo
+  body : Array[Statement]
+} derive(Eq, @debug.Debug)
+pub impl ToJson for BlockStatement
+pub impl @json.FromJson for BlockStatement
+
+pub(all) struct BreakStatement {
+  info : NodeInfo
+  label : Identifier?
+} derive(Eq, @debug.Debug)
+pub impl ToJson for BreakStatement
+
+pub(all) struct CallExpression {
+  info : NodeInfo
+  callee : ExpressionOrSuper
+  arguments : Array[Argument]
+  is_optional : Bool
+} derive(Eq, @debug.Debug)
+pub impl ToJson for CallExpression
+
+pub(all) struct CatchClause {
+  info : NodeInfo
+  param : Pattern?
+  body : BlockStatement
+} derive(Eq, @debug.Debug)
+pub impl ToJson for CatchClause
+pub impl @json.FromJson for CatchClause
+
+pub(all) enum ChainElement {
+  Call(CallExpression)
+  Member(MemberExpression)
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ChainElement
+pub impl @json.FromJson for ChainElement
+
+pub(all) struct ChainExpression {
+  info : NodeInfo
+  expression : ChainElement
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ChainExpression
+
+pub(all) struct Class {
+  info : NodeInfo
+  id : Identifier?
+  super_class : Expression?
+  body : ClassBody
+  decorators : Array[Decorator]
+} derive(Eq, @debug.Debug)
+
+pub(all) struct ClassBody {
+  info : NodeInfo
+  body : Array[ClassElement]
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ClassBody
+pub impl @json.FromJson for ClassBody
+
+pub(all) enum ClassElement {
+  Method(MethodDefinition)
+  Property(PropertyDefinition)
+  Accessor(AccessorProperty)
+  StaticBlock(StaticBlock)
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ClassElement
+pub impl @json.FromJson for ClassElement
+
+pub(all) struct ConditionalExpression {
+  info : NodeInfo
+  test_ : Expression
+  consequent : Expression
+  alternate : Expression
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ConditionalExpression
+
+pub(all) struct ContinueStatement {
+  info : NodeInfo
+  label : Identifier?
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ContinueStatement
+
+pub(all) enum Declaration {
+  Function(Function)
+  Variable(VariableDeclaration)
+  Class(Class)
+} derive(Eq, @debug.Debug)
+pub impl ToJson for Declaration
+pub impl @json.FromJson for Declaration
+
+pub(all) struct Decorator {
+  info : NodeInfo
+  expression : Expression
+} derive(Eq, @debug.Debug)
+pub impl ToJson for Decorator
+pub impl @json.FromJson for Decorator
+
+pub(all) struct Directive {
+  info : NodeInfo
+  expression : Literal
+  directive : String
+} derive(Eq, @debug.Debug)
+pub impl ToJson for Directive
+pub impl @json.FromJson for Directive
+
+pub(all) struct DoWhileStatement {
+  info : NodeInfo
+  body : Statement
+  test_ : Expression
+} derive(Eq, @debug.Debug)
+pub impl ToJson for DoWhileStatement
+
+pub(all) struct ExportAllDeclaration {
+  info : NodeInfo
+  exported : ModuleExportName?
+  source : Literal
+  attributes : Array[ImportAttribute]
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ExportAllDeclaration
+
+pub(all) struct ExportDefaultDeclaration {
+  info : NodeInfo
+  declaration : ExportDefaultKind
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ExportDefaultDeclaration
+
+pub(all) enum ExportDefaultKind {
+  Function(Function)
+  Class(Class)
+  Expression(Expression)
+} derive(Eq, @debug.Debug)
+
+pub(all) struct ExportNamedDeclaration {
+  info : NodeInfo
+  declaration : Declaration?
+  specifiers : Array[ExportSpecifier]
+  source : Literal?
+  attributes : Array[ImportAttribute]
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ExportNamedDeclaration
+
+pub(all) struct ExportSpecifier {
+  info : NodeInfo
+  local_ : ModuleExportName
+  exported : ModuleExportName
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ExportSpecifier
+pub impl @json.FromJson for ExportSpecifier
+
+pub(all) enum Expression {
+  Identifier(Identifier)
+  Literal(Literal)
+  This(NodeInfo)
+  Array(ArrayExpression)
+  Object(ObjectExpression)
+  Function(Function)
+  Arrow(ArrowFunctionExpression)
+  Class(Class)
+  Template(TemplateLiteral)
+  TaggedTemplate(TaggedTemplateExpression)
+  Unary(UnaryExpression)
+  Update(UpdateExpression)
+  Binary(BinaryExpression)
+  Logical(LogicalExpression)
+  Assignment(AssignmentExpression)
+  Conditional(ConditionalExpression)
+  Call(CallExpression)
+  New(NewExpression)
+  Member(MemberExpression)
+  Sequence(SequenceExpression)
+  Yield(YieldExpression)
+  Await(AwaitExpression)
+  Chain(ChainExpression)
+  Import(ImportExpression)
+  MetaProperty(MetaProperty)
+} derive(Eq, @debug.Debug)
+pub impl ToJson for Expression
+pub impl @json.FromJson for Expression
+
+pub(all) enum ExpressionOrSuper {
+  Expression(Expression)
+  Super(NodeInfo)
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ExpressionOrSuper
+pub impl @json.FromJson for ExpressionOrSuper
+
+pub(all) struct ExpressionStatement {
+  info : NodeInfo
+  expression : Expression
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ExpressionStatement
+
+pub(all) enum ForInLeft {
+  Variable(VariableDeclaration)
+  Pattern(Pattern)
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ForInLeft
+pub impl @json.FromJson for ForInLeft
+
+pub(all) struct ForInStatement {
+  info : NodeInfo
+  left : ForInLeft
+  right : Expression
+  body : Statement
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ForInStatement
+
+pub(all) enum ForInit {
+  Variable(VariableDeclaration)
+  Expression(Expression)
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ForInit
+pub impl @json.FromJson for ForInit
+
+pub(all) struct ForOfStatement {
+  info : NodeInfo
+  left : ForInLeft
+  right : Expression
+  body : Statement
+  is_await : Bool
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ForOfStatement
+
+pub(all) struct ForStatement {
+  info : NodeInfo
+  init : ForInit?
+  test_ : Expression?
+  update : Expression?
+  body : Statement
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ForStatement
+
+pub(all) struct Function {
+  info : NodeInfo
+  id : Identifier?
+  params : Array[Pattern]
+  body : FunctionBody
+  is_generator : Bool
+  is_async : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct FunctionBody {
+  info : NodeInfo
+  directives : Array[Directive]
+  body : Array[Statement]
+} derive(Eq, @debug.Debug)
+pub impl ToJson for FunctionBody
+pub impl @json.FromJson for FunctionBody
+
+pub(all) struct Identifier {
+  info : NodeInfo
+  name : String
+} derive(Eq, @debug.Debug)
+pub fn Identifier::named(String) -> Self
+pub impl ToJson for Identifier
+pub impl @json.FromJson for Identifier
+
+pub(all) struct IfStatement {
+  info : NodeInfo
+  test_ : Expression
+  consequent : Statement
+  alternate : Statement?
+} derive(Eq, @debug.Debug)
+pub impl ToJson for IfStatement
+
+pub(all) struct ImportAttribute {
+  info : NodeInfo
+  key : ModuleExportName
+  value : Literal
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ImportAttribute
+pub impl @json.FromJson for ImportAttribute
+
+pub(all) enum ImportClause {
+  Named(ImportSpecifier)
+  Default(ImportDefaultSpecifier)
+  Namespace(ImportNamespaceSpecifier)
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ImportClause
+pub impl @json.FromJson for ImportClause
+
+pub(all) struct ImportDeclaration {
+  info : NodeInfo
+  specifiers : Array[ImportClause]
+  source : Literal
+  attributes : Array[ImportAttribute]
+  phase : ImportPhase?
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ImportDeclaration
+
+pub(all) struct ImportDefaultSpecifier {
+  info : NodeInfo
+  local_ : Identifier
+} derive(Eq, @debug.Debug)
+
+pub(all) struct ImportExpression {
+  info : NodeInfo
+  source : Expression
+  options : Expression?
+  phase : ImportPhase?
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ImportExpression
+
+pub(all) struct ImportNamespaceSpecifier {
+  info : NodeInfo
+  local_ : Identifier
+} derive(Eq, @debug.Debug)
+
+pub(all) enum ImportPhase {
+  Source
+  Defer
+} derive(Eq, @debug.Debug)
+pub fn ImportPhase::parse(StringView) -> Self?
+pub fn ImportPhase::to_string(Self) -> String
+pub impl ToJson for ImportPhase
+pub impl @json.FromJson for ImportPhase
+
+pub(all) struct ImportSpecifier {
+  info : NodeInfo
+  imported : ModuleExportName
+  local_ : Identifier
+} derive(Eq, @debug.Debug)
+
+pub(all) struct LabeledStatement {
+  info : NodeInfo
+  label : Identifier
+  body : Statement
+} derive(Eq, @debug.Debug)
+pub impl ToJson for LabeledStatement
+
+pub(all) struct Literal {
+  info : NodeInfo
+  value : LiteralValue
+  raw : String?
+} derive(Eq, @debug.Debug)
+pub fn Literal::string(String) -> Self
+pub impl ToJson for Literal
+pub impl @json.FromJson for Literal
+
+pub(all) enum LiteralValue {
+  String(String)
+  Boolean(Bool)
+  Null
+  Number(Double)
+  RegExp(pattern~ : String, flags~ : String)
+  BigInt(String)
+} derive(Eq, @debug.Debug)
+
+pub(all) struct LogicalExpression {
+  info : NodeInfo
+  operator : LogicalOperator
+  left : Expression
+  right : Expression
+} derive(Eq, @debug.Debug)
+pub impl ToJson for LogicalExpression
+
+pub(all) enum LogicalOperator {
+  Or
+  And
+  NullishCoalescing
+} derive(Eq, @debug.Debug)
+pub fn LogicalOperator::parse(StringView) -> Self?
+pub fn LogicalOperator::to_string(Self) -> String
+pub impl ToJson for LogicalOperator
+pub impl @json.FromJson for LogicalOperator
+
+pub(all) struct MemberExpression {
+  info : NodeInfo
+  object : ExpressionOrSuper
+  property : MemberProperty
+  is_optional : Bool
+} derive(Eq, @debug.Debug)
+pub impl ToJson for MemberExpression
+pub impl @json.FromJson for MemberExpression
+
+pub(all) enum MemberProperty {
+  Identifier(Identifier)
+  Private(PrivateIdentifier)
+  Computed(Expression)
+} derive(Eq, @debug.Debug)
+
+pub(all) struct MetaProperty {
+  info : NodeInfo
+  meta : Identifier
+  property : Identifier
+} derive(Eq, @debug.Debug)
+pub impl ToJson for MetaProperty
+
+pub(all) struct MethodDefinition {
+  info : NodeInfo
+  key : PropertyKey
+  value : Function
+  kind : MethodKind
+  is_static : Bool
+  decorators : Array[Decorator]
+} derive(Eq, @debug.Debug)
+pub impl ToJson for MethodDefinition
+
+pub(all) enum MethodKind {
+  Constructor
+  Method
+  Get
+  Set
+} derive(Eq, @debug.Debug)
+pub fn MethodKind::parse(StringView) -> Self?
+pub fn MethodKind::to_string(Self) -> String
+pub impl ToJson for MethodKind
+pub impl @json.FromJson for MethodKind
+
+pub(all) enum ModuleDeclaration {
+  Import(ImportDeclaration)
+  ExportNamed(ExportNamedDeclaration)
+  ExportDefault(ExportDefaultDeclaration)
+  ExportAll(ExportAllDeclaration)
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ModuleDeclaration
+pub impl @json.FromJson for ModuleDeclaration
+
+pub(all) enum ModuleExportName {
+  Identifier(Identifier)
+  Literal(Literal)
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ModuleExportName
+pub impl @json.FromJson for ModuleExportName
+
+pub(all) enum ModuleItem {
+  Statement(Statement)
+  Module(ModuleDeclaration)
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ModuleItem
+pub impl @json.FromJson for ModuleItem
+
+pub(all) struct NewExpression {
+  info : NodeInfo
+  callee : Expression
+  arguments : Array[Argument]
+} derive(Eq, @debug.Debug)
+pub impl ToJson for NewExpression
+
+pub(all) struct NodeInfo {
+  loc : SourceLocation?
+  start : Int32?
+  end : Int32?
+  range : (Int32, Int32)?
+} derive(Eq, @debug.Debug)
+pub fn NodeInfo::empty() -> Self
+pub impl Default for NodeInfo
+
+pub(all) struct ObjectExpression {
+  info : NodeInfo
+  properties : Array[ObjectMember]
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ObjectExpression
+
+pub(all) enum ObjectMember {
+  Property(Property)
+  Spread(SpreadElement)
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ObjectMember
+pub impl @json.FromJson for ObjectMember
+
+pub(all) struct ObjectPattern {
+  info : NodeInfo
+  properties : Array[ObjectPatternMember]
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ObjectPattern
+
+pub(all) enum ObjectPatternMember {
+  Property(AssignmentProperty)
+  Rest(RestElement)
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ObjectPatternMember
+pub impl @json.FromJson for ObjectPatternMember
+
+pub(all) enum Pattern {
+  Identifier(Identifier)
+  Member(MemberExpression)
+  Object(ObjectPattern)
+  Array(ArrayPattern)
+  Rest(RestElement)
+  Assignment(AssignmentPattern)
+} derive(Eq, @debug.Debug)
+pub impl ToJson for Pattern
+pub impl @json.FromJson for Pattern
+
+pub(all) struct Position {
+  line : Int32
+  column : Int32
+} derive(Eq, @debug.Debug)
+pub impl ToJson for Position
+pub impl @json.FromJson for Position
+
+pub(all) struct PrivateIdentifier {
+  info : NodeInfo
+  name : String
+} derive(Eq, @debug.Debug)
+pub impl ToJson for PrivateIdentifier
+pub impl @json.FromJson for PrivateIdentifier
+
+pub(all) struct Program {
+  info : NodeInfo
+  source_type : SourceType
+  directives : Array[Directive]
+  body : Array[ModuleItem]
+} derive(Eq, @debug.Debug)
+pub fn Program::parse_json(StringView) -> Self raise
+pub fn Program::to_json_string(Self, indent? : Int32) -> String
+pub impl ToJson for Program
+pub impl @json.FromJson for Program
+
+pub(all) struct Property {
+  info : NodeInfo
+  key : PropertyKey
+  value : Expression
+  kind : PropertyKind
+  is_method : Bool
+  is_shorthand : Bool
+} derive(Eq, @debug.Debug)
+pub impl ToJson for Property
+pub impl @json.FromJson for Property
+
+pub(all) struct PropertyDefinition {
+  info : NodeInfo
+  key : PropertyKey
+  value : Expression?
+  is_static : Bool
+  decorators : Array[Decorator]
+} derive(Eq, @debug.Debug)
+pub impl ToJson for PropertyDefinition
+
+pub(all) enum PropertyKey {
+  Identifier(Identifier)
+  Literal(Literal)
+  Private(PrivateIdentifier)
+  Computed(Expression)
+} derive(Eq, @debug.Debug)
+pub fn PropertyKey::is_computed(Self) -> Bool
+
+pub(all) enum PropertyKind {
+  Init
+  Get
+  Set
+} derive(Eq, @debug.Debug)
+pub fn PropertyKind::parse(StringView) -> Self?
+pub fn PropertyKind::to_string(Self) -> String
+pub impl ToJson for PropertyKind
+pub impl @json.FromJson for PropertyKind
+
+pub(all) struct RestElement {
+  info : NodeInfo
+  argument : Pattern
+} derive(Eq, @debug.Debug)
+pub impl ToJson for RestElement
+
+pub(all) struct ReturnStatement {
+  info : NodeInfo
+  argument : Expression?
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ReturnStatement
+
+pub(all) struct SequenceExpression {
+  info : NodeInfo
+  expressions : Array[Expression]
+} derive(Eq, @debug.Debug)
+pub impl ToJson for SequenceExpression
+
+pub(all) struct SourceLocation {
+  source : String?
+  start : Position
+  end : Position
+} derive(Eq, @debug.Debug)
+pub impl ToJson for SourceLocation
+pub impl @json.FromJson for SourceLocation
+
+pub(all) enum SourceType {
+  Script
+  Module
+} derive(Eq, @debug.Debug)
+pub fn SourceType::parse(StringView) -> Self?
+pub fn SourceType::to_string(Self) -> String
+pub impl ToJson for SourceType
+pub impl @json.FromJson for SourceType
+
+pub(all) struct SpreadElement {
+  info : NodeInfo
+  argument : Expression
+} derive(Eq, @debug.Debug)
+pub impl ToJson for SpreadElement
+pub impl @json.FromJson for SpreadElement
+
+pub(all) enum Statement {
+  Expression(ExpressionStatement)
+  Block(BlockStatement)
+  Empty(NodeInfo)
+  Debugger(NodeInfo)
+  With(WithStatement)
+  Return(ReturnStatement)
+  Labeled(LabeledStatement)
+  Break(BreakStatement)
+  Continue(ContinueStatement)
+  If(IfStatement)
+  Switch(SwitchStatement)
+  Throw(ThrowStatement)
+  Try(TryStatement)
+  While(WhileStatement)
+  DoWhile(DoWhileStatement)
+  For(ForStatement)
+  ForIn(ForInStatement)
+  ForOf(ForOfStatement)
+  Declaration(Declaration)
+} derive(Eq, @debug.Debug)
+pub impl ToJson for Statement
+pub impl @json.FromJson for Statement
+
+pub(all) struct StaticBlock {
+  info : NodeInfo
+  body : Array[Statement]
+} derive(Eq, @debug.Debug)
+pub impl ToJson for StaticBlock
+
+pub(all) struct SwitchCase {
+  info : NodeInfo
+  test_ : Expression?
+  consequent : Array[Statement]
+} derive(Eq, @debug.Debug)
+pub impl ToJson for SwitchCase
+pub impl @json.FromJson for SwitchCase
+
+pub(all) struct SwitchStatement {
+  info : NodeInfo
+  discriminant : Expression
+  cases : Array[SwitchCase]
+} derive(Eq, @debug.Debug)
+pub impl ToJson for SwitchStatement
+
+pub(all) struct TaggedTemplateExpression {
+  info : NodeInfo
+  tag : Expression
+  quasi : TemplateLiteral
+} derive(Eq, @debug.Debug)
+pub impl ToJson for TaggedTemplateExpression
+
+pub(all) struct TemplateElement {
+  info : NodeInfo
+  is_tail : Bool
+  cooked : String?
+  raw : String
+} derive(Eq, @debug.Debug)
+pub impl ToJson for TemplateElement
+pub impl @json.FromJson for TemplateElement
+
+pub(all) struct TemplateLiteral {
+  info : NodeInfo
+  quasis : Array[TemplateElement]
+  expressions : Array[Expression]
+} derive(Eq, @debug.Debug)
+pub impl ToJson for TemplateLiteral
+pub impl @json.FromJson for TemplateLiteral
+
+pub(all) struct ThrowStatement {
+  info : NodeInfo
+  argument : Expression
+} derive(Eq, @debug.Debug)
+pub impl ToJson for ThrowStatement
+
+pub(all) struct TryStatement {
+  info : NodeInfo
+  block : BlockStatement
+  handler : CatchClause?
+  finalizer : BlockStatement?
+} derive(Eq, @debug.Debug)
+pub impl ToJson for TryStatement
+
+pub(all) struct UnaryExpression {
+  info : NodeInfo
+  operator : UnaryOperator
+  is_prefix : Bool
+  argument : Expression
+} derive(Eq, @debug.Debug)
+pub impl ToJson for UnaryExpression
+
+pub(all) enum UnaryOperator {
+  Minus
+  Plus
+  Not
+  BitNot
+  Typeof
+  Void
+  Delete
+} derive(Eq, @debug.Debug)
+pub fn UnaryOperator::parse(StringView) -> Self?
+pub fn UnaryOperator::to_string(Self) -> String
+pub impl ToJson for UnaryOperator
+pub impl @json.FromJson for UnaryOperator
+
+pub(all) struct UpdateExpression {
+  info : NodeInfo
+  operator : UpdateOperator
+  argument : Expression
+  is_prefix : Bool
+} derive(Eq, @debug.Debug)
+pub impl ToJson for UpdateExpression
+
+pub(all) enum UpdateOperator {
+  Increment
+  Decrement
+} derive(Eq, @debug.Debug)
+pub fn UpdateOperator::parse(StringView) -> Self?
+pub fn UpdateOperator::to_string(Self) -> String
+pub impl ToJson for UpdateOperator
+pub impl @json.FromJson for UpdateOperator
+
+pub(all) struct VariableDeclaration {
+  info : NodeInfo
+  declarations : Array[VariableDeclarator]
+  kind : VariableKind
+} derive(Eq, @debug.Debug)
+pub impl ToJson for VariableDeclaration
+pub impl @json.FromJson for VariableDeclaration
+
+pub(all) struct VariableDeclarator {
+  info : NodeInfo
+  id : Pattern
+  init : Expression?
+} derive(Eq, @debug.Debug)
+pub impl ToJson for VariableDeclarator
+pub impl @json.FromJson for VariableDeclarator
+
+pub(all) enum VariableKind {
+  Var
+  Let
+  Const
+  Using
+  AwaitUsing
+} derive(Eq, @debug.Debug)
+pub fn VariableKind::parse(StringView) -> Self?
+pub fn VariableKind::to_string(Self) -> String
+pub impl ToJson for VariableKind
+pub impl @json.FromJson for VariableKind
+
+pub(all) struct WhileStatement {
+  info : NodeInfo
+  test_ : Expression
+  body : Statement
+} derive(Eq, @debug.Debug)
+pub impl ToJson for WhileStatement
+
+pub(all) struct WithStatement {
+  info : NodeInfo
+  object : Expression
+  body : Statement
+} derive(Eq, @debug.Debug)
+pub impl ToJson for WithStatement
+
+pub(all) struct YieldExpression {
+  info : NodeInfo
+  argument : Expression?
+  is_delegate : Bool
+} derive(Eq, @debug.Debug)
+pub impl ToJson for YieldExpression
+
+// Type aliases
+
+// Traits

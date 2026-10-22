@@ -1,0 +1,12 @@
+{
+  "name": "estree-fixtures",
+  "private": true,
+  "type": "module",
+  "description": "Generates ESTree JSON fixtures with acorn",
+  "scripts": {
+    "gen": "node gen_fixtures.mjs"
+  },
+  "devDependencies": {
+    "acorn": "8.19.0"
+  }
+}

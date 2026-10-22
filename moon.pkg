@@ -1,0 +1,7 @@
+import {
+  "moonbitlang/core/json",
+}
+
+// `derive(Debug, Eq)` on every node would otherwise trigger E0079 per type.
+
+warnings = "-implicit_impl_as_method"
