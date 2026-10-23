@@ -11,6 +11,8 @@
   --bad-bg: #fde8e6;
   --warn: #8a5a00;
   --warn-bg: #fdf1d8;
+  --editor-bg: #ffffff;
+  --tab-hover: #ebebe7;
   color-scheme: light;
 }
 
@@ -28,6 +30,9 @@
     --bad-bg: #3d1a18;
     --warn: #ffc76b;
     --warn-bg: #3a2c10;
+    /* matches the oneDark editor theme */
+    --editor-bg: #282c34;
+    --tab-hover: #24262b;
     color-scheme: dark;
   }
 }
@@ -128,19 +133,43 @@ main {
   border-bottom: 1px solid var(--border);
 }
 
+.tabs {
+  align-items: flex-end;
+  gap: 2px;
+  padding: 8px 10px 0;
+  background: var(--bg);
+}
+
 .tabs button {
-  border-color: transparent;
+  position: relative;
+  bottom: -1px;
+  padding: 6px 14px;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
   background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.tabs button:hover {
+  color: var(--text);
+  background: var(--tab-hover);
 }
 
 .tabs button[aria-selected="true"] {
   border-color: var(--border);
-  background: var(--bg);
+  background: var(--editor-bg);
+  color: var(--text);
   font-weight: 600;
+  /* covers the strip's bottom border so the tab joins its content */
+  box-shadow: 0 1px 0 var(--editor-bg);
 }
 
 .positions {
   margin-left: auto;
+  align-self: center;
+  padding-bottom: 6px;
 }
 
 .editor {
