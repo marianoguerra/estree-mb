@@ -1,0 +1,21 @@
+import {
+  "marianoguerra/estree",
+  "marianoguerra/estree/codegen",
+}
+
+supported_targets = "js+wasm-gc"
+
+options(
+  link: {
+    "js": { "exports": [ "process" ], "format": "esm" },
+    "wasm-gc": {
+      "exports": [ "process" ],
+      "use-js-builtin-string": true,
+      "imported-string-constants": "_",
+    },
+  },
+)
+
+import {
+  "moonbitlang/core/json",
+} for "test"

@@ -1,0 +1,69 @@
+// Assembles the GitHub Pages playground into _site/: the static files in
+// site/, the browser-safe AST comparison helpers, the js and wasm-gc release
+// builds of the playground package, and examples.json from fixtures/js.
+//
+// Run from the module root after building both targets:
+//   moon build --target js --release && moon build --target wasm-gc --release
+//   moon run tools/build_site.mbtx
+
+import {
+  "moonbitlang/core/json",
+  "moonbitlang/x/fs",
+}
+
+///|
+let out_dir = "_site"
+
+///|
+let examples_dir = "fixtures/js"
+
+///|
+fn copy(from : String, to : String) -> Unit raise {
+  @fs.write_bytes_to_file(to, @fs.read_file_to_bytes(from))
+}
+
+///|
+fn main raise {
+  if @fs.path_exists(out_dir) {
+    for name in @fs.read_dir(out_dir) {
+      @fs.remove_file("\{out_dir}/\{name}")
+    }
+  } else {
+    @fs.create_dir(out_dir)
+  }
+  for name in @fs.read_dir("site") {
+    copy("site/\{name}", "\{out_dir}/\{name}")
+  }
+  copy("tools/ast_diff.mjs", "\{out_dir}/ast_diff.mjs")
+  copy(
+    "_build/js/release/build/playground/playground.js",
+    "\{out_dir}/playground.js",
+  )
+  copy(
+    "_build/wasm-gc/release/build/playground/playground.wasm",
+    "\{out_dir}/playground.wasm",
+  )
+  let names = @fs.read_dir(examples_dir).to_owned()
+  names.sort_by(String::lexical_compare)
+  let examples : Array[Json] = []
+  for name in names {
+    let (stem, source_type) = if name.strip_suffix(".cjs") is Some(stem) {
+      (stem, "script")
+    } else if name.strip_suffix(".js") is Some(stem) {
+      (stem, "module")
+    } else {
+      continue
+    }
+    let code = @fs.read_file_to_string("\{examples_dir}/\{name}")
+    examples.push({
+      "name": stem.to_owned(),
+      "sourceType": source_type,
+      "code": code,
+    })
+  }
+  @fs.write_string_to_file(
+    "\{out_dir}/examples.json",
+    Json::array(examples).stringify(),
+  )
+  println("wrote \{out_dir} with \{examples.length()} examples")
+}

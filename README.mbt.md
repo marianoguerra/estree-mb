@@ -6,6 +6,8 @@ MoonBit types, with a lossless JSON codec.
 Coverage: ES5 through ES2026, plus the stage 3 extensions (decorators,
 `accessor` fields, source-phase and deferred imports).
 
+Try it in the [playground](https://marianoguerra.github.io/estree-mb/).
+
 ## Design
 
 - **One struct per node.** ESTree's `<:` hierarchies and union-typed fields
@@ -79,7 +81,10 @@ way.
 The `codegen` package turns an AST back into JavaScript:
 
 ```mbt nocheck
+///|
 let js = @codegen.program(program) // also: @codegen.statement, @codegen.expression
+
+///|
 let tabs = @codegen.program(program, indent="\t", line_end="\r\n")
 ```
 
@@ -135,3 +140,22 @@ moon run tools/embed_fixtures.mbtx
 moon test
 node tools/check_codegen.mjs
 ```
+
+## Playground
+
+`site/` is a static page deployed to GitHub Pages by
+`.github/workflows/pages.yml`. It parses the editor contents with acorn and
+passes the ESTree JSON to the `playground` package. That package is built for
+both the js and wasm-gc targets, and it decodes the JSON, re-encodes it and
+generates code. The page then reports whether the JSON roundtrips, whether
+acorn reparses our output (and astring's) to the same AST, and whether the
+two generated texts are identical. To build and serve it locally:
+
+```sh
+moon build --target js --release && moon build --target wasm-gc --release
+moon run tools/build_site.mbtx
+python3 -m http.server -d _site
+```
+
+The wasm-gc build passes strings using the JS string builtins, which need a
+recent browser.
