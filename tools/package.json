@@ -2,11 +2,16 @@
   "name": "estree-fixtures",
   "private": true,
   "type": "module",
-  "description": "Generates ESTree JSON fixtures with acorn",
+  "description": "Fixture generation and code generation oracles for the MoonBit ESTree library",
   "scripts": {
-    "gen": "node gen_fixtures.mjs"
+    "gen": "node gen_fixtures.mjs",
+    "oracle": "node gen_codegen_oracle.mjs",
+    "check": "node check_codegen.mjs"
   },
   "devDependencies": {
-    "acorn": "8.19.0"
+    "@babel/parser": "8.0.7",
+    "acorn": "8.19.0",
+    "astring": "1.9.0",
+    "oxc-parser": "0.155.0"
   }
 }

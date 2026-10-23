@@ -1,0 +1,33 @@
+{
+  "program": null,
+  "items": [
+    {
+      "code": "class P {\n  x;\n  y = 1;\n  static z = 2;\n  #priv = 3;\n  static #spriv;\n  [\"computed\"] = 4;\n  \"quoted\" = 5;\n  static {\n    this.z = 3;\n  }\n  static {}\n  #method() {\n    return this.#priv;\n  }\n  get #g() {\n    return 1;\n  }\n  static #sm() {}\n  has(o) {\n    return (#priv in o);\n  }\n  [k];\n  constructor() {\n    this.#priv++;\n  }\n}\n",
+      "trusted": true
+    },
+    {
+      "code": "await something;\n",
+      "trusted": true
+    },
+    {
+      "code": "export {a as undefined};\n",
+      "trusted": false
+    },
+    {
+      "code": "export {undefined as b} from \"m\";\n",
+      "trusted": false
+    },
+    {
+      "code": "import {undefined as c} from \"m\";\n",
+      "trusted": false
+    },
+    {
+      "code": "export * as undefined from \"m\";\n",
+      "trusted": false
+    },
+    {
+      "code": "const a = 1;\n",
+      "trusted": true
+    }
+  ]
+}

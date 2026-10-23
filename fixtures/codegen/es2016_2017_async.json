@@ -1,0 +1,41 @@
+{
+  "program": "a ** b;\na **= b;\n(-2) ** 2;\nasync function af() {\n  await x;\n  await (async () => 1)();\n}\nconst aa = async x => await x;\nconst ab = async (a, b) => {\n  await a;\n};\nconst o = {\n  async m() {},\n  async *ag() {\n    yield await 1;\n  }\n};\nclass K {\n  async m() {}\n  static async s() {}\n}\nconst ae = async function () {};\n",
+  "items": [
+    {
+      "code": "a ** b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a **= b;\n",
+      "trusted": true
+    },
+    {
+      "code": "(-2) ** 2;\n",
+      "trusted": true
+    },
+    {
+      "code": "async function af() {\n  await x;\n  await (async () => 1)();\n}\n",
+      "trusted": true
+    },
+    {
+      "code": "const aa = async x => await x;\n",
+      "trusted": true
+    },
+    {
+      "code": "const ab = async (a, b) => {\n  await a;\n};\n",
+      "trusted": true
+    },
+    {
+      "code": "const o = {\n  async m() {},\n  async *ag() {\n    yield await 1;\n  }\n};\n",
+      "trusted": true
+    },
+    {
+      "code": "class K {\n  async m() {}\n  static async s() {}\n}\n",
+      "trusted": true
+    },
+    {
+      "code": "const ae = async function () {};\n",
+      "trusted": true
+    }
+  ]
+}

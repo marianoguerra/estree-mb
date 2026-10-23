@@ -1,0 +1,17 @@
+{
+  "program": null,
+  "items": [
+    {
+      "code": null,
+      "trusted": false
+    },
+    {
+      "code": "export default class {}\n",
+      "trusted": false
+    },
+    {
+      "code": "(class {});\n",
+      "trusted": false
+    }
+  ]
+}

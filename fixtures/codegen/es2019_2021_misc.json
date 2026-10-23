@@ -1,0 +1,37 @@
+{
+  "program": "try {\n  a();\n} catch {\n  b();\n}\na ?? b;\na ||= b;\na &&= b;\na ??= b;\n1_000_000;\n0b1010;\n0o17;\n",
+  "items": [
+    {
+      "code": "try {\n  a();\n} catch {\n  b();\n}\n",
+      "trusted": true
+    },
+    {
+      "code": "a ?? b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a ||= b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a &&= b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a ??= b;\n",
+      "trusted": true
+    },
+    {
+      "code": "1_000_000;\n",
+      "trusted": true
+    },
+    {
+      "code": "0b1010;\n",
+      "trusted": true
+    },
+    {
+      "code": "0o17;\n",
+      "trusted": true
+    }
+  ]
+}

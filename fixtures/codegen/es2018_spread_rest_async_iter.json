@@ -1,0 +1,29 @@
+{
+  "program": "const o = {\n  ...a,\n  b,\n  ...c\n};\nconst {x, ...others} = o;\nasync function f() {\n  for await (const item of stream) {}\n  for await (x of y) {}\n}\nasync function* ag() {\n  yield* inner();\n}\n/(?<year>\\d{4})/su;\n/(?<=a)b/;\n",
+  "items": [
+    {
+      "code": "const o = {\n  ...a,\n  b,\n  ...c\n};\n",
+      "trusted": true
+    },
+    {
+      "code": "const {x, ...others} = o;\n",
+      "trusted": true
+    },
+    {
+      "code": "async function f() {\n  for await (const item of stream) {}\n  for await (x of y) {}\n}\n",
+      "trusted": true
+    },
+    {
+      "code": "async function* ag() {\n  yield* inner();\n}\n",
+      "trusted": true
+    },
+    {
+      "code": "/(?<year>\\d{4})/su;\n",
+      "trusted": true
+    },
+    {
+      "code": "/(?<=a)b/;\n",
+      "trusted": true
+    }
+  ]
+}

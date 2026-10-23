@@ -1,0 +1,69 @@
+{
+  "program": "\"use strict-ish\";\n'another directive';\nvar a = 1, b;\n;\ndebugger;\nwith (obj) {\n  a;\n}\nfunction f(x, y) {\n  \"use strict\";\n  if (x) return x; else if (y) {\n    return;\n  } else return y;\n}\nouter: for (var i = 0; i < 10; i++) {\n  for (; ; ) {\n    break outer;\n  }\n  continue outer;\n}\nfor (i in obj) {}\nfor (var k in obj) break;\nwhile (a) a--;\ndo {\n  b++;\n} while (b < 3);\nswitch (a) {\n  case 1:\n    a = 2;\n    break;\n  case \"x\":\n  default:\n    throw new Error(\"bad\");\n}\ntry {\n  a();\n} catch (e) {\n  b();\n} finally {\n  c();\n}\ntry {\n  a();\n} catch (e) {}\ntry {\n  a();\n} finally {}\n",
+  "items": [
+    {
+      "code": "\"use strict-ish\";\n",
+      "trusted": true
+    },
+    {
+      "code": "'another directive';\n",
+      "trusted": true
+    },
+    {
+      "code": "var a = 1, b;\n",
+      "trusted": true
+    },
+    {
+      "code": ";\n",
+      "trusted": true
+    },
+    {
+      "code": "debugger;\n",
+      "trusted": true
+    },
+    {
+      "code": "with (obj) {\n  a;\n}\n",
+      "trusted": true
+    },
+    {
+      "code": "function f(x, y) {\n  \"use strict\";\n  if (x) return x; else if (y) {\n    return;\n  } else return y;\n}\n",
+      "trusted": true
+    },
+    {
+      "code": "outer: for (var i = 0; i < 10; i++) {\n  for (; ; ) {\n    break outer;\n  }\n  continue outer;\n}\n",
+      "trusted": true
+    },
+    {
+      "code": "for (i in obj) {}\n",
+      "trusted": true
+    },
+    {
+      "code": "for (var k in obj) break;\n",
+      "trusted": true
+    },
+    {
+      "code": "while (a) a--;\n",
+      "trusted": true
+    },
+    {
+      "code": "do {\n  b++;\n} while (b < 3);\n",
+      "trusted": true
+    },
+    {
+      "code": "switch (a) {\n  case 1:\n    a = 2;\n    break;\n  case \"x\":\n  default:\n    throw new Error(\"bad\");\n}\n",
+      "trusted": true
+    },
+    {
+      "code": "try {\n  a();\n} catch (e) {\n  b();\n} finally {\n  c();\n}\n",
+      "trusted": true
+    },
+    {
+      "code": "try {\n  a();\n} catch (e) {}\n",
+      "trusted": true
+    },
+    {
+      "code": "try {\n  a();\n} finally {}\n",
+      "trusted": true
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "program": "const x = 1;\nexport default x + 1;\n",
+  "items": [
+    {
+      "code": "const x = 1;\n",
+      "trusted": true
+    },
+    {
+      "code": "export default x + 1;\n",
+      "trusted": true
+    }
+  ]
+}

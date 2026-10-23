@@ -1,0 +1,57 @@
+{
+  "program": "const {a, b: {c}, d = 1, [\"e\"]: f, ...rest} = obj;\nconst [g, , h = 2, ...tail] = arr;\nlet [[i], {j}] = nested;\n({a, b} = obj);\n[a, b] = [b, a];\n[a.b, c[d]] = pair;\n({x: obj.y = 1} = src);\nfunction params({a, b = 1}, [c, d], e = 3, ...others) {}\nfor (const [k, v] of entries) {}\nfor ({a} of list) {}\nfor (x of y) {}\nfor (let x in y) {}\ntry {} catch ({message}) {}\n",
+  "items": [
+    {
+      "code": "const {a, b: {c}, d = 1, [\"e\"]: f, ...rest} = obj;\n",
+      "trusted": true
+    },
+    {
+      "code": "const [g, , h = 2, ...tail] = arr;\n",
+      "trusted": true
+    },
+    {
+      "code": "let [[i], {j}] = nested;\n",
+      "trusted": true
+    },
+    {
+      "code": "({a, b} = obj);\n",
+      "trusted": true
+    },
+    {
+      "code": "[a, b] = [b, a];\n",
+      "trusted": true
+    },
+    {
+      "code": "[a.b, c[d]] = pair;\n",
+      "trusted": true
+    },
+    {
+      "code": "({x: obj.y = 1} = src);\n",
+      "trusted": true
+    },
+    {
+      "code": "function params({a, b = 1}, [c, d], e = 3, ...others) {}\n",
+      "trusted": true
+    },
+    {
+      "code": "for (const [k, v] of entries) {}\n",
+      "trusted": true
+    },
+    {
+      "code": "for ({a} of list) {}\n",
+      "trusted": true
+    },
+    {
+      "code": "for (x of y) {}\n",
+      "trusted": true
+    },
+    {
+      "code": "for (let x in y) {}\n",
+      "trusted": true
+    },
+    {
+      "code": "try {} catch ({message}) {}\n",
+      "trusted": true
+    }
+  ]
+}

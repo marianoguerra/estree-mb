@@ -1,0 +1,9 @@
+{
+  "program": null,
+  "items": [
+    {
+      "code": "export default function () {}\n",
+      "trusted": false
+    }
+  ]
+}

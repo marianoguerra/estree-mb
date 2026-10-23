@@ -1,0 +1,61 @@
+{
+  "program": "function* gen() {\n  yield;\n  yield 1;\n  yield* other();\n}\nconst arrow1 = () => 1;\nconst arrow2 = (a, b) => {\n  return a + b;\n};\nconst arrow3 = x => ({\n  x\n});\nconst arrow4 = () => {\n  \"use strict\";\n};\nlet {length} = \"abc\";\nclass A {}\nclass B extends A {\n  constructor(x) {\n    super(x);\n    this.x = x;\n  }\n  method() {\n    return super.method();\n  }\n  static create() {\n    return new.target;\n  }\n  get value() {\n    return 1;\n  }\n  set value(v) {}\n  *items() {}\n  [\"computed\" + 1]() {}\n  static [Symbol.iterator]() {}\n  \"string key\"() {}\n  42() {}\n}\nconst C = class {};\nconst D = class Named extends (A, B) {};\nconst obj = {\n  a,\n  b,\n  method() {},\n  *gen() {},\n  [key]: 1,\n  [\"k\" + 1]() {},\n  get [x]() {}\n};\nf(...args, ...[1, 2]);\nnew F(...args);\n[...a, b];\n",
+  "items": [
+    {
+      "code": "function* gen() {\n  yield;\n  yield 1;\n  yield* other();\n}\n",
+      "trusted": true
+    },
+    {
+      "code": "const arrow1 = () => 1;\n",
+      "trusted": true
+    },
+    {
+      "code": "const arrow2 = (a, b) => {\n  return a + b;\n};\n",
+      "trusted": true
+    },
+    {
+      "code": "const arrow3 = x => ({\n  x\n});\n",
+      "trusted": true
+    },
+    {
+      "code": "const arrow4 = () => {\n  \"use strict\";\n};\n",
+      "trusted": true
+    },
+    {
+      "code": "let {length} = \"abc\";\n",
+      "trusted": true
+    },
+    {
+      "code": "class A {}\n",
+      "trusted": true
+    },
+    {
+      "code": "class B extends A {\n  constructor(x) {\n    super(x);\n    this.x = x;\n  }\n  method() {\n    return super.method();\n  }\n  static create() {\n    return new.target;\n  }\n  get value() {\n    return 1;\n  }\n  set value(v) {}\n  *items() {}\n  [\"computed\" + 1]() {}\n  static [Symbol.iterator]() {}\n  \"string key\"() {}\n  42() {}\n}\n",
+      "trusted": true
+    },
+    {
+      "code": "const C = class {};\n",
+      "trusted": true
+    },
+    {
+      "code": "const D = class Named extends (A, B) {};\n",
+      "trusted": true
+    },
+    {
+      "code": "const obj = {\n  a,\n  b,\n  method() {},\n  *gen() {},\n  [key]: 1,\n  [\"k\" + 1]() {},\n  get [x]() {}\n};\n",
+      "trusted": true
+    },
+    {
+      "code": "f(...args, ...[1, 2]);\n",
+      "trusted": true
+    },
+    {
+      "code": "new F(...args);\n",
+      "trusted": true
+    },
+    {
+      "code": "[...a, b];\n",
+      "trusted": true
+    }
+  ]
+}

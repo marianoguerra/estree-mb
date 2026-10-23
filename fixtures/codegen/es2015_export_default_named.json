@@ -1,0 +1,13 @@
+{
+  "program": "export default function named() {}\nexport class Other {}\n",
+  "items": [
+    {
+      "code": "export default function named() {}\n",
+      "trusted": true
+    },
+    {
+      "code": "export class Other {}\n",
+      "trusted": true
+    }
+  ]
+}

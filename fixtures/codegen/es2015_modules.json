@@ -1,0 +1,77 @@
+{
+  "program": "import def from \"a\";\nimport * as ns from \"b\";\nimport {x, y as z, default as w} from \"c\";\nimport def2, {q} from \"d\";\nimport def3, * as ns2 from \"e\";\nimport \"side-effect\";\nimport \"empty\";\nexport const one = 1;\nexport let two = 2, three;\nexport function fn() {}\nexport class Cls {}\nexport {one as uno, two as dos};\nexport {x as ex, y} from \"c\";\nexport * from \"all\";\nexport * as named from \"all2\";\nexport {default as def1} from \"def\";\nexport {default as other} from \"def2\";\nexport default function () {}\n",
+  "items": [
+    {
+      "code": "import def from \"a\";\n",
+      "trusted": true
+    },
+    {
+      "code": "import * as ns from \"b\";\n",
+      "trusted": true
+    },
+    {
+      "code": "import {x, y as z, default as w} from \"c\";\n",
+      "trusted": true
+    },
+    {
+      "code": "import def2, {q} from \"d\";\n",
+      "trusted": true
+    },
+    {
+      "code": "import def3, * as ns2 from \"e\";\n",
+      "trusted": true
+    },
+    {
+      "code": "import \"side-effect\";\n",
+      "trusted": true
+    },
+    {
+      "code": "import \"empty\";\n",
+      "trusted": true
+    },
+    {
+      "code": "export const one = 1;\n",
+      "trusted": true
+    },
+    {
+      "code": "export let two = 2, three;\n",
+      "trusted": true
+    },
+    {
+      "code": "export function fn() {}\n",
+      "trusted": true
+    },
+    {
+      "code": "export class Cls {}\n",
+      "trusted": true
+    },
+    {
+      "code": "export {one as uno, two as dos};\n",
+      "trusted": true
+    },
+    {
+      "code": "export {x as ex, y} from \"c\";\n",
+      "trusted": true
+    },
+    {
+      "code": "export * from \"all\";\n",
+      "trusted": true
+    },
+    {
+      "code": "export * as named from \"all2\";\n",
+      "trusted": true
+    },
+    {
+      "code": "export {default as def1} from \"def\";\n",
+      "trusted": true
+    },
+    {
+      "code": "export {default as other} from \"def2\";\n",
+      "trusted": true
+    },
+    {
+      "code": "export default function () {}\n",
+      "trusted": true
+    }
+  ]
+}

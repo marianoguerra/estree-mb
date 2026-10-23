@@ -1,0 +1,13 @@
+{
+  "program": "{\n  using a = resource();\n  using b = r1(), c = r2();\n}\nasync function f() {\n  await using x = resource();\n  for (using y of list) {}\n  for (await using z of list) {}\n  for await (await using w of list) {}\n}\n",
+  "items": [
+    {
+      "code": "{\n  using a = resource();\n  using b = r1(), c = r2();\n}\n",
+      "trusted": true
+    },
+    {
+      "code": "async function f() {\n  await using x = resource();\n  for (using y of list) {}\n  for (await using z of list) {}\n  for await (await using w of list) {}\n}\n",
+      "trusted": true
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "program": "this;\n[1, , \"two\", null, true, false, 3.25, 0x10, 1e21, /re[g]+x/gi];\n({\n  a: 1,\n  \"b\": 2,\n  3: 3,\n  get c() {\n    return 1;\n  },\n  set c(v) {}\n});\n(function named(a) {\n  return a;\n});\n(function () {});\n-a;\n+a;\n!a;\n~a;\ntypeof a;\nvoid 0;\ndelete a.b;\na++;\na--;\n++a;\n--a;\na == b;\na != b;\na === b;\na !== b;\na < b;\na <= b;\na > b;\na >= b;\na << b;\na >> b;\na >>> b;\na + b;\na - b;\na * b;\na / b;\na % b;\na | b;\na ^ b;\na & b;\n(a in b);\na instanceof b;\na = b;\na += b;\na -= b;\na *= b;\na /= b;\na %= b;\na <<= b;\na >>= b;\na >>>= b;\na |= b;\na ^= b;\na &= b;\na || b;\na && b;\na.b;\na[\"b\"];\na[0];\na.b.c[d];\na ? b : c;\nf();\nf(a, b);\na.b(c);\nnew F();\nnew F(a, b);\nnew a.B();\n(a, b, c);\n\"é\\n\\t\\\"quoted\\\"\";\n",
+  "items": [
+    {
+      "code": "this;\n",
+      "trusted": true
+    },
+    {
+      "code": "[1, , \"two\", null, true, false, 3.25, 0x10, 1e21, /re[g]+x/gi];\n",
+      "trusted": true
+    },
+    {
+      "code": "({\n  a: 1,\n  \"b\": 2,\n  3: 3,\n  get c() {\n    return 1;\n  },\n  set c(v) {}\n});\n",
+      "trusted": true
+    },
+    {
+      "code": "(function named(a) {\n  return a;\n});\n",
+      "trusted": true
+    },
+    {
+      "code": "(function () {});\n",
+      "trusted": true
+    },
+    {
+      "code": "-a;\n",
+      "trusted": true
+    },
+    {
+      "code": "+a;\n",
+      "trusted": true
+    },
+    {
+      "code": "!a;\n",
+      "trusted": true
+    },
+    {
+      "code": "~a;\n",
+      "trusted": true
+    },
+    {
+      "code": "typeof a;\n",
+      "trusted": true
+    },
+    {
+      "code": "void 0;\n",
+      "trusted": true
+    },
+    {
+      "code": "delete a.b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a++;\n",
+      "trusted": true
+    },
+    {
+      "code": "a--;\n",
+      "trusted": true
+    },
+    {
+      "code": "++a;\n",
+      "trusted": true
+    },
+    {
+      "code": "--a;\n",
+      "trusted": true
+    },
+    {
+      "code": "a == b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a != b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a === b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a !== b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a < b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a <= b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a > b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a >= b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a << b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a >> b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a >>> b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a + b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a - b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a * b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a / b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a % b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a | b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a ^ b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a & b;\n",
+      "trusted": true
+    },
+    {
+      "code": "(a in b);\n",
+      "trusted": true
+    },
+    {
+      "code": "a instanceof b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a = b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a += b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a -= b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a *= b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a /= b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a %= b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a <<= b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a >>= b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a >>>= b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a |= b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a ^= b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a &= b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a || b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a && b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a.b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a[\"b\"];\n",
+      "trusted": true
+    },
+    {
+      "code": "a[0];\n",
+      "trusted": true
+    },
+    {
+      "code": "a.b.c[d];\n",
+      "trusted": true
+    },
+    {
+      "code": "a ? b : c;\n",
+      "trusted": true
+    },
+    {
+      "code": "f();\n",
+      "trusted": true
+    },
+    {
+      "code": "f(a, b);\n",
+      "trusted": true
+    },
+    {
+      "code": "a.b(c);\n",
+      "trusted": true
+    },
+    {
+      "code": "new F();\n",
+      "trusted": true
+    },
+    {
+      "code": "new F(a, b);\n",
+      "trusted": true
+    },
+    {
+      "code": "new a.B();\n",
+      "trusted": true
+    },
+    {
+      "code": "(a, b, c);\n",
+      "trusted": true
+    },
+    {
+      "code": "\"é\\n\\t\\\"quoted\\\"\";\n",
+      "trusted": true
+    }
+  ]
+}

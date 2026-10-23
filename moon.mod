@@ -13,3 +13,7 @@ keywords = [ "estree", "javascript", "ast" ]
 preferred_target = "wasm"
 
 description = "ESTree JavaScript AST as idiomatic MoonBit types with a lossless JSON codec"
+
+import {
+  "moonbitlang/x@0.5.6",
+}

@@ -1,0 +1,33 @@
+{
+  "program": "`plain`;\n`a ${b} c ${d + e} f`;\ntag`x ${y} z`;\n(a.b)`nested ${`inner ${deep}`}`;\n(String.raw)`\\unicode and \\u{1F600}`;\ntag`\\unicode invalid escape`;\n`line1\nline2`;\n",
+  "items": [
+    {
+      "code": "`plain`;\n",
+      "trusted": true
+    },
+    {
+      "code": "`a ${b} c ${d + e} f`;\n",
+      "trusted": true
+    },
+    {
+      "code": "tag`x ${y} z`;\n",
+      "trusted": true
+    },
+    {
+      "code": "(a.b)`nested ${`inner ${deep}`}`;\n",
+      "trusted": true
+    },
+    {
+      "code": "(String.raw)`\\unicode and \\u{1F600}`;\n",
+      "trusted": true
+    },
+    {
+      "code": "tag`\\unicode invalid escape`;\n",
+      "trusted": true
+    },
+    {
+      "code": "`line1\nline2`;\n",
+      "trusted": true
+    }
+  ]
+}

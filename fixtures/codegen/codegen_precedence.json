@@ -1,0 +1,289 @@
+{
+  "program": null,
+  "items": [
+    {
+      "code": "new (f())();\n",
+      "trusted": true
+    },
+    {
+      "code": "new (a.b().c)();\n",
+      "trusted": true
+    },
+    {
+      "code": "new a?.b();\n",
+      "trusted": false
+    },
+    {
+      "code": "new (class {})();\n",
+      "trusted": true
+    },
+    {
+      "code": "new A()();\n",
+      "trusted": true
+    },
+    {
+      "code": "new A.b();\n",
+      "trusted": true
+    },
+    {
+      "code": "(-2) ** 2;\n",
+      "trusted": true
+    },
+    {
+      "code": "a ** -b;\n",
+      "trusted": true
+    },
+    {
+      "code": "(a ** b) ** c;\n",
+      "trusted": true
+    },
+    {
+      "code": "a ** b ** c;\n",
+      "trusted": true
+    },
+    {
+      "code": "a ?? (b || c);\n",
+      "trusted": true
+    },
+    {
+      "code": "(a ?? b) || c;\n",
+      "trusted": true
+    },
+    {
+      "code": "(a && b) ?? c;\n",
+      "trusted": true
+    },
+    {
+      "code": "a + (b + c);\n",
+      "trusted": true
+    },
+    {
+      "code": "a + b + c;\n",
+      "trusted": true
+    },
+    {
+      "code": "a - (b - c);\n",
+      "trusted": true
+    },
+    {
+      "code": "a * (b + c);\n",
+      "trusted": true
+    },
+    {
+      "code": "(a, b) + c;\n",
+      "trusted": true
+    },
+    {
+      "code": "f((a, b));\n",
+      "trusted": true
+    },
+    {
+      "code": "a[(b, c)];\n",
+      "trusted": true
+    },
+    {
+      "code": "x = (a, b);\n",
+      "trusted": true
+    },
+    {
+      "code": "(() => {})();\n",
+      "trusted": true
+    },
+    {
+      "code": "(async () => {})();\n",
+      "trusted": true
+    },
+    {
+      "code": "(function () {})();\n",
+      "trusted": true
+    },
+    {
+      "code": "(function () {}).call(this);\n",
+      "trusted": true
+    },
+    {
+      "code": "!(function () {})();\n",
+      "trusted": true
+    },
+    {
+      "code": "({}).x;\n",
+      "trusted": true
+    },
+    {
+      "code": "({} = x);\n",
+      "trusted": true
+    },
+    {
+      "code": "({a} = x);\n",
+      "trusted": true
+    },
+    {
+      "code": "(class {}).name;\n",
+      "trusted": true
+    },
+    {
+      "code": "(a, b) ? c : d;\n",
+      "trusted": true
+    },
+    {
+      "code": "(a = b) ? c : d;\n",
+      "trusted": true
+    },
+    {
+      "code": "a ? b : c ? d : e;\n",
+      "trusted": true
+    },
+    {
+      "code": "(a ? b : c) ? d : e;\n",
+      "trusted": true
+    },
+    {
+      "code": "typeof (a + b);\n",
+      "trusted": true
+    },
+    {
+      "code": "typeof typeof a;\n",
+      "trusted": true
+    },
+    {
+      "code": "- -a;\n",
+      "trusted": true
+    },
+    {
+      "code": "- -a;\n",
+      "trusted": true
+    },
+    {
+      "code": "+ +a;\n",
+      "trusted": true
+    },
+    {
+      "code": "- --a;\n",
+      "trusted": true
+    },
+    {
+      "code": "!(a && b);\n",
+      "trusted": true
+    },
+    {
+      "code": "delete a[0];\n",
+      "trusted": true
+    },
+    {
+      "code": "void (0, a);\n",
+      "trusted": true
+    },
+    {
+      "code": "(a || b)();\n",
+      "trusted": true
+    },
+    {
+      "code": "(a + b).c;\n",
+      "trusted": true
+    },
+    {
+      "code": "(a.b)`x`;\n",
+      "trusted": true
+    },
+    {
+      "code": "a?.b();\n",
+      "trusted": false
+    },
+    {
+      "code": "a?.b();\n",
+      "trusted": true
+    },
+    {
+      "code": "(a?.b)`t`;\n",
+      "trusted": true
+    },
+    {
+      "code": "(1).toString();\n",
+      "trusted": true
+    },
+    {
+      "code": "(1.).toString();\n",
+      "trusted": true
+    },
+    {
+      "code": "(\"str\").length;\n",
+      "trusted": true
+    },
+    {
+      "code": "(-1).x;\n",
+      "trusted": true
+    },
+    {
+      "code": "const f1 = () => ({});\n",
+      "trusted": true
+    },
+    {
+      "code": "const f2 = () => ({}).x;\n",
+      "trusted": true
+    },
+    {
+      "code": "const f3 = () => (a, b);\n",
+      "trusted": true
+    },
+    {
+      "code": "const f4 = async x => x;\n",
+      "trusted": true
+    },
+    {
+      "code": "async function af() {\n  (await x) ** 2;\n  await (a || b);\n}\n",
+      "trusted": true
+    },
+    {
+      "code": "function* g() {\n  (yield a) + 1;\n  f(yield a, yield);\n  yield* (a, b);\n}\n",
+      "trusted": true
+    },
+    {
+      "code": "class K extends (a ? b : c) {\n  #x;\n  m() {\n    return this?.#x;\n  }\n}\n",
+      "trusted": true
+    },
+    {
+      "code": "for (var i = (a in b); i; i--) {}\n",
+      "trusted": true
+    },
+    {
+      "code": "for ((a in b); ; ) break;\n",
+      "trusted": true
+    },
+    {
+      "code": "for (const [k] of (a, b)) {}\n",
+      "trusted": true
+    },
+    {
+      "code": "0.5;\n",
+      "trusted": true
+    },
+    {
+      "code": ".5;\n",
+      "trusted": true
+    },
+    {
+      "code": "5e-7;\n",
+      "trusted": true
+    },
+    {
+      "code": "0xFF;\n",
+      "trusted": true
+    },
+    {
+      "code": "1e21;\n",
+      "trusted": true
+    },
+    {
+      "code": "\"\\u{1F600}\" + '\\'' + \"\\\"\";\n",
+      "trusted": true
+    },
+    {
+      "code": "`a\\`b${`c${d}`}`;\n",
+      "trusted": true
+    },
+    {
+      "code": "export default class {};\n",
+      "trusted": false
+    }
+  ]
+}

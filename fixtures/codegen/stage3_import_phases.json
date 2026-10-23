@@ -1,0 +1,21 @@
+{
+  "program": null,
+  "items": [
+    {
+      "code": "import wasm from \"./x.wasm\";\n",
+      "trusted": false
+    },
+    {
+      "code": "import * as ns from \"./y.js\";\n",
+      "trusted": false
+    },
+    {
+      "code": "import(\"./x.wasm\");\n",
+      "trusted": false
+    },
+    {
+      "code": "import(\"./y.js\");\n",
+      "trusted": false
+    }
+  ]
+}

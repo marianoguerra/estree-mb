@@ -1,0 +1,29 @@
+{
+  "program": null,
+  "items": [
+    {
+      "code": "import json from \"./data.json\" with { type: \"json\" };\n",
+      "trusted": true
+    },
+    {
+      "code": "import {a} from \"./mod.js\" with { type: \"javascript\", undefined: \"v\" };\n",
+      "trusted": false
+    },
+    {
+      "code": "export {b} from \"./b.json\" with { type: \"json\" };\n",
+      "trusted": true
+    },
+    {
+      "code": "export * from \"./c.json\" with { type: \"json\" };\n",
+      "trusted": true
+    },
+    {
+      "code": "import(\"./d.json\");\n",
+      "trusted": false
+    },
+    {
+      "code": "/[\\p{L}--[a-z]]/v;\n",
+      "trusted": true
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "program": null,
+  "items": [
+    {
+      "code": "a?.b;\n",
+      "trusted": true
+    },
+    {
+      "code": "a?.[b];\n",
+      "trusted": true
+    },
+    {
+      "code": "a?.();\n",
+      "trusted": true
+    },
+    {
+      "code": "a?.b.c();\n",
+      "trusted": true
+    },
+    {
+      "code": "a.b?.c?.d;\n",
+      "trusted": true
+    },
+    {
+      "code": "a?.b.c;\n",
+      "trusted": false
+    },
+    {
+      "code": "a?.b?.c;\n",
+      "trusted": false
+    },
+    {
+      "code": "a?.b?.();\n",
+      "trusted": true
+    },
+    {
+      "code": "function nt() {\n  return new.target;\n}\n",
+      "trusted": true
+    },
+    {
+      "code": "1n;\n",
+      "trusted": true
+    },
+    {
+      "code": "0x1Fn;\n",
+      "trusted": true
+    },
+    {
+      "code": "12345678901234567890n;\n",
+      "trusted": true
+    },
+    {
+      "code": "import(\"module\");\n",
+      "trusted": true
+    },
+    {
+      "code": "import(specifier).then(m => m);\n",
+      "trusted": true
+    },
+    {
+      "code": "import.meta;\n",
+      "trusted": true
+    },
+    {
+      "code": "import.meta.url;\n",
+      "trusted": true
+    },
+    {
+      "code": "export * as ns from \"mod\";\n",
+      "trusted": true
+    }
+  ]
+}

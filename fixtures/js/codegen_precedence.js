@@ -1,0 +1,67 @@
+new (f())();
+new (a.b().c)();
+new (a?.b)();
+new (class {})();
+new A()();
+new A.b();
+(-2) ** 2;
+a ** -b;
+(a ** b) ** c;
+a ** b ** c;
+a ?? (b || c);
+(a ?? b) || c;
+(a && b) ?? c;
+a + (b + c);
+(a + b) + c;
+a - (b - c);
+a * (b + c);
+(a, b) + c;
+f((a, b));
+a[(b, c)];
+x = (a, b);
+(() => {})();
+(async () => {})();
+(function () {})();
+(function () {}).call(this);
+!function () {}();
+({}).x;
+({} = x);
+({ a } = x);
+(class {}).name;
+(a, b) ? c : d;
+(a = b) ? c : d;
+a ? b : c ? d : e;
+(a ? b : c) ? d : e;
+typeof (a + b);
+typeof typeof a;
+- -a;
+-(-a);
++ +a;
+- --a;
+!(a && b);
+delete a[0];
+void (0, a);
+(a || b)();
+(a + b).c;
+a.b`x`;
+(a?.b)();
+a?.b();
+(a?.b)`t`;
+(1).toString();
+1..toString();
+"str".length;
+(-1).x;
+const f1 = () => ({});
+const f2 = () => ({}).x;
+const f3 = () => (a, b);
+const f4 = async x => x;
+async function af() { (await x) ** 2; await (a || b); }
+function* g() { (yield a) + 1; f(yield a, yield); yield* (a, b); }
+class K extends (a ? b : c) { #x; m() { return this?.#x; } }
+for (var i = (a in b); i; i--) {}
+for ((a in b); ; ) break;
+for (const [k] of (a, b)) {}
+0.5; .5; 5e-7; 0xFF; 1e21;
+"\u{1F600}" + '\'' + "\"";
+`a\`b${`c${d}`}`;
+export default (class {});

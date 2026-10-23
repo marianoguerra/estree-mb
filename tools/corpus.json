@@ -1,0 +1,8 @@
+[
+  { "path": "acorn/dist/acorn.mjs", "sourceType": "module" },
+  { "path": "acorn/dist/acorn.js", "sourceType": "script" },
+  { "path": "astring/dist/astring.mjs", "sourceType": "module" },
+  { "path": "@babel/parser/lib/index.js", "sourceType": "module" },
+  { "path": "oxc-parser/src-js/bindings.js", "sourceType": "module" },
+  { "path": "oxc-parser/src-js/index.js", "sourceType": "module" }
+]

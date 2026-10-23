@@ -1,0 +1,21 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "marianoguerra/estree/codegen"
+
+import {
+  "marianoguerra/estree",
+}
+
+// Values
+pub fn expression(@estree.Expression, indent? : String, line_end? : String) -> String
+
+pub fn program(@estree.Program, indent? : String, line_end? : String) -> String
+
+pub fn statement(@estree.Statement, indent? : String, line_end? : String) -> String
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits
